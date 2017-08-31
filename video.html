@@ -16,10 +16,6 @@
 			loop: true,
 			clickToPlayPause: false,
 			success:function(player, dom, mediaelement){
-				mediaelement.container[0].style.position = 'absolute';
-				mediaelement.container[0].style.zIndex = '1';
-				
-				//background video should autoplay
 				player.play();
 			},
 			// Do not forget to put a final slash (/)
