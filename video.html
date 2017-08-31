@@ -13,6 +13,15 @@
 
 	<script type="text/javascript">
 		$('video').mediaelementplayer({
+			loop: true,
+			clickToPlayPause: false,
+			success:function(player, dom, mediaelement){
+				mediaelement.container[0].style.position = 'absolute';
+				mediaelement.container[0].style.zIndex = '1';
+				
+				//background video should autoplay
+				player.play();
+			},
 			// Do not forget to put a final slash (/)
 			pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
 			// this will allow the CDN to use Flash without restrictions
