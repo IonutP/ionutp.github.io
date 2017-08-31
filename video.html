@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Video test</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.5/mediaelement-and-player.js"></script>
+	<!-- Add any other renderers you need; see Use Renderers for more information -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.5/mediaelementplayer.min.css" />
+</head>
+<body>
+	<video src="http://q4implementation.s3.amazonaws.com/IPO_Dark.mp4" width="320" height="240" type="video/mp4"></video>
 
+	<script type="text/javascript">
+		$('video').mediaelementplayer({
+			// Do not forget to put a final slash (/)
+			pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
+			// this will allow the CDN to use Flash without restrictions
+			// (by default, this is set as `sameDomain`)
+			shimScriptAccess: 'always'
+			// more configuration
+		});
+	</script>
+</body>
+</html>
