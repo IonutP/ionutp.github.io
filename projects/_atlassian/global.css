@@ -1007,7 +1007,12 @@ input[type="checkbox"]+label {
   border-bottom: 2px solid rgb(244, 245, 247);
   border-color: rgba(244, 245, 247, 0.99);
 }
-
+.MobileNav.nav--sticky {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+}
 @media screen and (max-width: 640px) {
   body.js--nav-open:before {
     content: '';
@@ -1364,9 +1369,9 @@ input[type="checkbox"]+label {
   position: relative;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 640px) {
   .PaneHeader2 {
-    padding-top: 0 !important;
+    padding-top: 45px;
   }
 }
 
