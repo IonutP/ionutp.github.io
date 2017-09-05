@@ -135,17 +135,19 @@ table {
 
 @font-face {
   font-family: CircularPro;
-  src: url(/files/js/lineto/Circular/lineto-circular-black-c.woff);
+  src: url(../js/lineto/Circular/lineto-circular-black-c.woff);
 }
 
 body {
-  font-family: helvetica;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.3;
   text-align: center;
   margin: 0 auto;
   color: #333;
+  font-family: 'LLCircularWeb',"Helvetica Neue",Helvetica,sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1,
@@ -1161,7 +1163,7 @@ input[type="checkbox"]+label {
   margin-right: 42px;
   margin-left: -16px;
   margin-top: 0px;
-  font-family: LLCircularWeb, Helvetica, sans-serif;
+  font-family: 'LLCircularWeb', Helvetica, sans-serif;
   font-weight: 700;
   font-style: normal;
   transition: 250ms;
@@ -1299,6 +1301,10 @@ input[type="checkbox"]+label {
 .landImage {
   width: 100%;
   position: relative;
+  background: transparent url(../design/homepage-banner.jpg) no-repeat center 40%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 350px;
 }
 
 @media screen and (max-width: 1130px) {
@@ -1335,7 +1341,7 @@ input[type="checkbox"]+label {
   font-size: 60px;
   color: #fff;
   margin: 0;
-  font-family: "CircularPro";
+  /*font-family: "CircularPro";*/
   font-weight: 700;
 }
 
@@ -1345,7 +1351,12 @@ input[type="checkbox"]+label {
     margin-bottom: 10px;
   }
 }
-
+@media screen and (max-width: 640px) {
+  .landImage {
+    height: auto;
+    padding-bottom: 30%;
+  }
+}
 @media screen and (max-width: 500px) {
   .landImage h1 {
     font-size: 30px;
@@ -1608,7 +1619,7 @@ nav.navbar-collapse.bottomSet {
 
 nav.navbar-collapse.fixed {
   position: fixed;
-  top: 80px;
+  top: 0;
 }
 
 @media screen and (max-width: 800px) {
@@ -2511,7 +2522,7 @@ nav.navbar-collapse.fixed {
   z-index: 0;
   background: #F5F5F5;
   background: #ffffff;
-  font-family: "CircularPro";
+  /*font-family: "CircularPro";*/
   font-weight: 700;
 }
 
@@ -2581,7 +2592,7 @@ nav.navbar-collapse.fixed {
   padding: 15px 0px;
   margin: 0px;
   line-height: 1;
-  font-family: "CircularPro";
+  /*font-family: "CircularPro";*/
   font-weight: 700;
 }
 
@@ -2604,7 +2615,7 @@ nav.navbar-collapse.fixed {
   font-size: 18px;
   line-height: 28px;
   color: #707070;
-  font-family: CircularPro;
+  /*font-family: CircularPro;*/
 }
 
 .StockQuoteHeaderContainer .StockChange:before {
@@ -2629,7 +2640,7 @@ nav.navbar-collapse.fixed {
 .StockQuoteHeaderContainer a.StockPrice {
   color: #214f83;
   font-size: 60px;
-  font-family: "CircularPro";
+  /*font-family: "CircularPro";*/
   font-weight: 700;
 }
 
@@ -5342,10 +5353,6 @@ p.not-found {}
 .quarterly-earnings h4 {
   text-align: left;
   padding-left: 10px;
-}
-
-.ModuleTitle {
-  font-family: "CircularPro";
 }
 
 #latest-financial .shareholder {
