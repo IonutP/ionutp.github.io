@@ -144,7 +144,7 @@ body {
   line-height: 1.3;
   text-align: center;
   margin: 0 auto;
-  color: #333;
+  color: #42526E;
   font-family: 'LLCircularWeb',"Helvetica Neue",Helvetica,sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -156,18 +156,25 @@ h3,
 h4,
 h5,
 h6 {
-  color: #205081;
+  color: #253858;
   font-weight: normal;
   /*text-align: left;*/
   text-rendering: optimizelegibility;
 }
 
 h1 {
-  font-size: 24px;
-  margin: 20px 0px 20px 0px;
-  font-weight: bold;
+  font-size: 36px;
+  line-height: 48px;
+  margin: 24px 0px;
+  font-weight: 700;
+  letter-spacing: -1px;
 }
-
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
 h2 {
   /*n/a*/
 }
@@ -181,14 +188,24 @@ h4 {
 }
 
 a {
-  color: #5e8ec0;
+  color: #0052CC;
   cursor: pointer;
   outline: none;
   text-align: inherit;
   text-decoration: none;
   line-height: inherit;
 }
-
+a:hover {
+  color: #005FFF;
+  text-decoration: underline;
+}
+a:focus {
+  color: #0052CC;
+  text-decoration: underline;
+}
+a:visited {
+  color: #403293;
+}
 b,
 strong {
   font-weight: bold;
@@ -217,23 +234,6 @@ small {
   line-height: 14px;
 }
 
-
-/*.legendText {
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 1.1;
-}*/
-
-@media only screen and (max-width: 735px) {
-
-  h1 {
-    font-size: 20px;
-    margin: 15px 0 30px;
-  }
-}
-
-
 /*--------------------Start Pane Content--------------------*/
 
 .PaneContent {
@@ -241,9 +241,9 @@ small {
 }
 
 .PaneContent a {
-  color: #3271B3;
+  /*color: #3271B3;*/
   outline: medium none;
-  text-decoration: none;
+  /*text-decoration: none;*/
 }
 
 
@@ -335,7 +335,7 @@ textarea {
   margin: 0;
   padding: 10px;
   height: 40px;
-  color: #000;
+  color: inherit;
   outline: none;
   border-radius: 3px;
 }
@@ -350,20 +350,21 @@ textarea {
 }
 
 input[type="submit"] {
-  background-color: #67ab48;
+  background-color: #0052CC;
   color: #fff;
   font-size: 14px;
+  font-weight: 700;
   margin-bottom: 10px;
   padding: 5px 10px;
   cursor: pointer;
   border: none;
   line-height: 1.6;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-  background-color: #13892B;
+  background-color: #0047B3;
 }
 
 input[type="checkbox"] {
@@ -431,8 +432,8 @@ input[type="checkbox"]+label {
 .sbSelector:link,
 .sbSelector:visited,
 .sbSelector:hover {
-  color: #5e8ec0;
-  font-weight: bold;
+  /*color: #5e8ec0;*/
+  font-weight: 700;
   outline: medium none;
   text-decoration: none;
 }
@@ -502,14 +503,14 @@ input[type="checkbox"]+label {
 
 .sbOptions a:link,
 .sbOptions a:visited {
-  color: #888686;
+  /*color: #888686;*/
   text-decoration: none;
 }
 
 .sbOptions a:hover,
 .sbOptions a:focus,
 .sbOptions a.sbFocus {
-  color: #888686;
+  /*color: #888686;*/
 }
 
 .sbOptions li.last a {
@@ -1525,9 +1526,11 @@ input[type="checkbox"]+label {
     width: 100%;
   }
 }
-
+nav.navbar-collapse a {
+  color:#0052CC;
+}
 nav.navbar-collapse a:hover {
-  /*color: #2F2F2F;*/
+  color: #005FFF;
   text-decoration: underline;
 }
 
@@ -1666,7 +1669,16 @@ nav.navbar-collapse.fixed {
   display: inline-block;
   width: 100%;
 }
-
+.PaneFooter h1 {
+  font-size: 24px;
+  line-height: 32px;
+}
+@media screen and (max-width: 640px) {
+  .PaneFooter h1 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
 .PaneFooter .MailingListSignupContainer {
   width: 40%;
   float: left;
@@ -1691,7 +1703,7 @@ nav.navbar-collapse.fixed {
 .PaneFooter .QuickLinks {
   width: 30%;
   float: left;
-  text-align: center;
+  text-align: left;
 }
 
 @media screen and (max-width: 1000px) {
@@ -1740,7 +1752,7 @@ nav.navbar-collapse.fixed {
 .email-alerts-footer .MailingListListTable table {
   width: 100%;
   margin-bottom: 20px;
-  color: #3171b2;
+  color: #0052CC;
 }
 
 .email-alerts-footer .MailingListListTable table tbody tr {
@@ -1777,7 +1789,7 @@ nav.navbar-collapse.fixed {
 }
 
 .email-alerts-footer .GridActions a {
-  color: #707070;
+  /*color: #707070;*/
   line-height: 32px;
   font-size: 12px;
   margin-left: 20px;
@@ -1790,7 +1802,7 @@ nav.navbar-collapse.fixed {
   list-style-type: none;
   text-align: left;
   position: relative;
-  left: 80px;
+  /*left: 80px;*/
 }
 
 @media screen and (max-width: 1000px) {
@@ -1810,7 +1822,7 @@ nav.navbar-collapse.fixed {
   list-style-type: none;
   text-align: left;
   position: relative;
-  left: 67px;
+  /*left: 67px;*/
   float: left;
 }
 
@@ -1822,11 +1834,14 @@ nav.navbar-collapse.fixed {
 
 .FooterLinks .FooterLinks a,
 .QuickLinks ul a {
-  color: #3171B2;
+  color: #0052CC;
   font-size: 16px;
   line-height: 26px;
 }
-
+.FooterLinks .FooterLinks a:hover,
+.QuickLinks ul a:hover {
+  color: #005FFF;
+}
 
 /*END FOOTER TOP*/
 
@@ -2132,7 +2147,7 @@ nav.navbar-collapse.fixed {
 .ModulePressReleaseLatest .ModuleItemRow .ModuleHeadlineLink {
   font-size: 18px;
   line-height: 21px;
-  color: #3171b2;
+  /*color: #3171b2;*/
 }
 
 .ModulePressReleaseLatest .ModuleFooter {
@@ -2144,7 +2159,7 @@ nav.navbar-collapse.fixed {
 }
 
 .ModulePressReleaseLatest .ModuleFooter a {
-  color: #3171b2;
+  /*color: #3171b2;*/
 }
 
 @media screen and (max-width: 800px) {
@@ -2202,7 +2217,7 @@ nav.navbar-collapse.fixed {
   margin-bottom: 10px;
   font-size: 18px;
   line-height: 21px;
-  color: #3171b2;
+  /*color: #3171b2;*/
 }
 
 .ModuleEventLatest .ModuleItemRow .hrefWebcast {
@@ -2215,17 +2230,18 @@ nav.navbar-collapse.fixed {
 
 .ModuleEventLatest .ModuleFooter a.ModuleViewAllLink {
   padding: 5px 10px;
-  border-radius: 6px;
-  color: #67ab48;
-  border: 1px solid #67ab48;
+  border-radius: 3px;
+  color: #0052CC;
+  border: 1px solid #0052CC;
   display: inline-block;
+  font-weight: 700;
 }
 
 .ModuleEventLatest .ModuleFooter a.ModuleViewAllLink:hover {
-  color: #fff;
-  background: #67ab48;
+  color: #0052CC;
+  background: #EBECF0;
+  text-decoration: none;
 }
-
 
 /*END LATEST EVENT*/
 
@@ -2276,7 +2292,7 @@ nav.navbar-collapse.fixed {
   margin-bottom: 10px;
   font-size: 18px;
   line-height: 21px;
-  color: #3171b2;
+  /*color: #3171b2;*/
 }
 
 .landing-event-latest .ModuleItemRow .hrefWebcast {
@@ -2289,15 +2305,17 @@ nav.navbar-collapse.fixed {
 
 .landing-event-latest .ModuleFooter a.ModuleViewAllLink {
   padding: 5px 10px;
-  border-radius: 6px;
-  color: #67ab48;
-  border: 1px solid #67ab48;
+  border-radius: 3px;
+  color: #0052CC;
+  border: 1px solid #0052CC;
   display: inline-block;
+  font-weight: 700;
 }
 
 .landing-event-latest .ModuleFooter a.ModuleViewAllLink:hover {
-  color: #fff;
-  background: #67ab48;
+  color: #0052CC;
+  background: #EBECF0;
+  text-decoration: none;
 }
 
 .landing-event-latest .WebcastLink,
@@ -2325,7 +2343,7 @@ nav.navbar-collapse.fixed {
   font-family: "Q4-Default-Icons";
   content: "\e904";
   font-size: 30px;
-  color: #5e8ec0;
+  /*color: #5e8ec0;*/
 }
 
 @media screen and (max-width: 800px) {
@@ -2365,21 +2383,23 @@ nav.navbar-collapse.fixed {
   font-size: 18px;
   line-height: 21px;
   display: block;
-  color: #3171b2;
+  /*color: #3171b2;*/
 }
 
 .financial-results a.ModuleViewAllLink {
   padding: 5px 10px;
-  border-radius: 6px;
-  color: #67ab48;
-  border: 1px solid #67ab48;
+  border-radius: 3px;
+  color: #0052CC;
+  border: 1px solid #0052CC;
   display: inline-block;
   margin-top: 30px;
+  font-weight: 700;
 }
 
 .financial-results a.ModuleViewAllLink:hover {
-  color: #fff;
-  background: #67ab48;
+  color: #0052CC;
+  background: #EBECF0;
+  text-decoration: none;
 }
 
 
@@ -2479,7 +2499,7 @@ nav.navbar-collapse.fixed {
 .QLFinancial table.CustomTable th {
   text-align: center;
   padding: 10px 5px;
-  background: #1D4F83;
+  background: #091E42;
   color: #FFF;
 }
 
@@ -2514,11 +2534,13 @@ nav.navbar-collapse.fixed {
 
 .page-title {
   position: relative;
-  padding: 60px 20px;
+  padding: 24px 20px;
   text-align: center;
   top: 0px;
-  font-size: 60px;
-  color: #1d4f83;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: -1px;
+  color: #253858;
   z-index: 0;
   background: #F5F5F5;
   background: #ffffff;
@@ -2537,17 +2559,17 @@ nav.navbar-collapse.fixed {
   height: 4px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
   .page-title {
-    font-size: 40px;
-    padding-bottom: 30px;
+    font-size: 44px;
+    line-height: 52px;
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 640px) {
   .page-title {
-    font-size: 30px;
-    padding-bottom: 20px;
+    font-size: 32px;
+    line-height: 40px;
   }
 }
 
@@ -2597,7 +2619,7 @@ nav.navbar-collapse.fixed {
 }
 
 .StockQuoteHeaderContainer h1 span.blue {
-  color: #59afe1;
+  color: #253858;
 }
 
 .StockQuoteHeaderContainer a.StockPrice,
@@ -2633,17 +2655,19 @@ nav.navbar-collapse.fixed {
 .StockQuoteHeaderContainer .StockDescription3 {
   font-size: 14px;
   line-height: 24px;
-  color: #e2e2e2;
+  color: #999;
   text-align: center;
 }
 
 .StockQuoteHeaderContainer a.StockPrice {
-  color: #214f83;
+  color: #253858;
   font-size: 60px;
   /*font-family: "CircularPro";*/
   font-weight: 700;
 }
-
+.StockQuoteHeaderContainer a.StockPrice:hover {
+  text-decoration: none;
+}
 .StockQuoteHeaderContainer a.StockPrice:before {
   content: "$";
   margin-right: 10px;
@@ -3069,7 +3093,7 @@ nav.navbar-collapse.fixed {
   display: block;
   font-size: 18px;
   line-height: 21px;
-  color: #3171B2;
+  /*color: #3171B2;*/
   margin-bottom: 10px;
 }
 
@@ -3140,7 +3164,7 @@ nav.navbar-collapse.fixed {
 .ModuleEvent .ModuleLinks a.ModuleLink:before,
 .ModuleEventDetails .ModuleLinks a.ModuleLink:before {
   font-size: 30px;
-  color: #5E8EC0;
+  /*color: #5E8EC0;*/
   display: inline-block;
   font-family: "Q4-Default-Icons";
   vertical-align: top;
@@ -3164,7 +3188,7 @@ nav.navbar-collapse.fixed {
   content: "\e902";
   margin-right: 2px;
   font-size: 30px;
-  color: #5e8ec0;
+  /*color: #5e8ec0;*/
 }
 
 .ModuleEvent .ModuleLinks a.ModuleLink:before,
@@ -3625,7 +3649,7 @@ p.not-found {}
 
 .RegulatoryFilingContainer .ModuleItemRow .ItemHref {
   font-weight: bold;
-  color: #3171B2;
+  /*color: #3171B2;*/
 }
 
 @media all and (max-width: 500px) {
@@ -4149,11 +4173,14 @@ p.not-found {}
 .ModulePressRelease .ModuleHeadlineLink {
   font-size: 18px;
   line-height: 21px;
-  color: #3171B2;
+  /*color: #3171B2;*/
 }
 
 .RssLinkTopContainer .RssLinkTop img {
   display: none;
+}
+.RssLinkTopContainer a:hover {
+  text-decoration: none;
 }
 
 .RssLinkTopContainer .RssLinkTop::after {
@@ -4498,7 +4525,13 @@ p.not-found {}
 
 .ModuleEvent .q4-atc-button,
 .ModuleEventDetails .q4-atc-button {
-  color: #5e8ec0;
+  color: #0052CC;
+}
+
+.ModuleEvent .q4-atc-button:hover,
+.ModuleEventDetails .q4-atc-button:hover {
+  color: #005FFF;
+  text-decoration: underline;
 }
 
 .ModulePresentation {
@@ -4585,13 +4618,16 @@ p.not-found {}
   /*cursor: pointer;*/
   /*padding-left: 20px;*/
   position: relative;
-  color: #205081;
+  /*color: #205081;*/
   font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 640px) {
   .PersonContainer h3 {
     font-size: 16px;
+    line-height: 20px;
   }
 }
 
@@ -4659,7 +4695,7 @@ p.not-found {}
 
 .PersonName,
 .PersonName2 {
-  color: #205081;
+  /*color: #205081;*/
 }
 
 .PersonDetailsContainer {
@@ -4807,7 +4843,7 @@ p.not-found {}
 
 .PersonContainer .PersonDescription .bio-wrap .bio-panel {
   cursor: pointer;
-  color: #3572b0;
+  color: #0052CC;
   padding-right: 10px;
   border-right: 1px solid #ccc;
 }
@@ -4820,7 +4856,7 @@ p.not-found {}
 
 .PersonContainer .PersonDescription .bio-wrap .hs-panel a:hover,
 .PersonContainer .PersonDescription .bio-wrap .bio-panel:hover {
-  color: #205081;
+  color: #005FFF;
   text-decoration: underline;
 }
 

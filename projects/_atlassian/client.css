@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'LLCircularWeb';
+  font-family: LLCircularWeb;
   src: url(../fonts/circular/lineto-circular-book-c.eot);
   src: url(../fonts/circular/lineto-circular-book-c.eot?#iefix) format("embedded-opentype"), url(../fonts/circular/lineto-circular-book-c.woff) format("woff"), url(../fonts/circular/lineto-circular-book-c.ttf) format("truetype"), url(../fonts/circular/lineto-circular-book-c.svg#LLCircularWeb-Book) format("svg");
   font-weight: 400;
