@@ -577,9 +577,14 @@ input[type="checkbox"]+label {
 .mainLogo a {
   display: block;
 }
+.mainLogo img {
+  width: 314px;
+  height: 23px;
+}
 @media screen and (max-width: 640px) {
   .mainLogo img {
-    max-width: 230px;
+    width: 230px;
+    height: 17px;
   }
 }
 
@@ -1396,7 +1401,7 @@ input[type="checkbox"]+label {
   text-align: left;
 }
 
-.Breadcrumb .container {
+.Breadcrumb:not(.page-title) .container {
   padding: 0;
   width: auto;
 }
@@ -1789,12 +1794,23 @@ nav.navbar-collapse.fixed {
 }
 
 .email-alerts-footer .GridActions a {
-  /*color: #707070;*/
+  color: #0052CC;
   line-height: 32px;
-  font-size: 12px;
-  margin-left: 20px;
+  font-size: 14px;
+  margin-right: 20px;
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 32px;
+  border-radius: 3px;
 }
-
+.email-alerts-footer .GridActions a:hover {
+  background-color: #EBECF0;
+  text-decoration: none;
+}
+.email-alerts-footer .GridActions a:focus {
+  background-color: #DEEBFF;
+  text-decoration: none;
+}
 .FooterLinks .FooterLinks {
   width: auto;
   padding: 0px;
@@ -2534,8 +2550,8 @@ nav.navbar-collapse.fixed {
 
 .page-title {
   position: relative;
-  padding: 24px 20px;
-  text-align: center;
+  padding: 24px 0;
+  /*text-align: center;*/
   top: 0px;
   font-size: 48px;
   line-height: 60px;
@@ -2547,14 +2563,16 @@ nav.navbar-collapse.fixed {
   /*font-family: "CircularPro";*/
   font-weight: 700;
 }
-
-.page-title:before {
+.page-title .BreadcrumbInner {
+  padding-left: 25%;
+}
+.page-title .BreadcrumbInner:before {
   content: "";
   position: absolute;
-  left: 50%;
+  /*left: 50%;*/
   bottom: 0;
   width: 190px;
-  margin-left: -95px;
+  /*margin-left: -95px;*/
   background: #f6c342;
   height: 4px;
 }
@@ -2566,10 +2584,23 @@ nav.navbar-collapse.fixed {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .page-title .BreadcrumbInner {
+    padding-left: 30%;
+  }
+}
+@media screen and (max-width: 670px) {
+  .page-title .BreadcrumbInner {
+    padding-left: 35%;
+  }
+}
 @media screen and (max-width: 640px) {
   .page-title {
     font-size: 32px;
     line-height: 40px;
+  }
+  .page-title .BreadcrumbInner {
+    padding-left: 0;
   }
 }
 
@@ -4329,7 +4360,7 @@ p.not-found {}
 
 .quarterly-earnings li {
   display: block;
-  margin: 10px 0;
+  padding: 5px 0;
 }
 
 .quarterly-earnings .DocumentInfo a {
@@ -5322,12 +5353,12 @@ p.not-found {}
 
 .quarterly-earnings .DocumentInfo li a:after {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 0;
   margin-left: -18px;
-  margin-top: -10px;
   font-family: 'Q4-Default-Icons';
   font-size: 22px;
+  transform: translateY(-50%);
 }
 
 .quarterly-earnings .DocumentInfo li.Financial.Report a:after {
@@ -5382,10 +5413,10 @@ p.not-found {}
 .quarterly-earnings .DocumentInfo a {
   text-transform: none;
   text-align: left;
-  padding-left: 10px;
+  padding-left: 15px;
   font-weight: normal;
+  line-height: 1.4;
 }
-
 .quarterly-earnings h4 {
   text-align: left;
   padding-left: 10px;
