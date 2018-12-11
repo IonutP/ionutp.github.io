@@ -1,0 +1,6 @@
+.js--hidden {
+    display: none !important;
+}
+.js--selected {
+    color: red;
+}
