@@ -57,11 +57,21 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- <script type="text/javascript" src="https://widgets.q4app.com/widgets/q4.dividends.1.1.3.min.js"></script> -->
     <script type="text/javascript">
-    var tabs = function($tabs, tabTrigger, tabClass, tabSelect) {
-        $(tabClass).addClass('js--hidden').attr('aria-hidden', 'true').first().removeClass('js--hidden').attr('aria-hidden', 'false');
+    var tabs = function($tabs, tabTrigger, tabClass, tabSelect, tabFromUrl) {
+        if (tabFromUrl) {
+            var hash = window.location.hash.split('#')[1];
+            console.log($(tabClass).filter('[data-tab=".'+hash+'"]'));
+            $(tabClass).addClass('js--hidden').attr('aria-hidden', 'true').filter('.'+hash).removeClass('js--hidden').attr('aria-hidden', 'false');
+        } else {
+            $(tabClass).addClass('js--hidden').attr('aria-hidden', 'true').first().removeClass('js--hidden').attr('aria-hidden', 'false');
+        }
 
         if (tabTrigger) {
-            $(tabTrigger).attr('tabindex', '0').first().addClass('js--selected');
+            if (tabFromUrl) {
+                $(tabTrigger).attr('tabindex', '0').filter('[data-tab=".'+hash+'"]').addClass('js--selected');
+            } else {
+                $(tabTrigger).attr('tabindex', '0').first().addClass('js--selected');
+            }
             $tabs.on('click keypress', tabTrigger, function(e) {
                 if ($(tabTrigger).is('a, button')) e.preventDefault();
                 $(this).addClass('js--selected').closest($tabs).find('.js--selected').not(this).removeClass('js--selected');
@@ -74,7 +84,11 @@
         }
 
         if (tabSelect) {
-            $(tabSelect + ' option:first-child').attr('selected', true);
+            if (tabFromUrl) {
+                $(tabSelect + ' option[value=".'+hash+'"]').attr('selected', true);
+            } else {
+                $(tabSelect + ' option:first-child').attr('selected', true);
+            }
             $tabs.on('change', tabSelect, function() {
                 $(tabClass).attr('aria-hidden', 'true').addClass('js--hidden').filter($(this).val()).removeClass('js--hidden').attr('aria-hidden', 'false');
                 if (tabTrigger) $(tabTrigger).removeClass('js--selected').filter('[data-tab="' + $(this).val() + '"]').addClass('js--selected');
@@ -82,7 +96,7 @@
         }
     };
 
-    tabs($('.tabs'), '.tabs_link', '.tab', '.tabs_select');
+    tabs($('.tabs'), '.tabs_link', '.tab', '.tabs_select', true);
 
     // $('.dividends').dividends();
     </script>
