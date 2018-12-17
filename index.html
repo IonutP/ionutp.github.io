@@ -75,6 +75,7 @@
                 $(trigger).attr('tabindex', '0').first().addClass('js--selected');
             }
             $container.on('click keypress', trigger, function(e) {
+                window.location.hash = $(this).data('tab').split('.')[1];
                 if ($(trigger).is('a, button')) e.preventDefault();
                 $(this).addClass('js--selected').closest($container).find('.js--selected').not(this).removeClass('js--selected');
                 $(content).attr('aria-hidden', 'true').addClass('js--hidden').filter($(this).data('tab')).removeClass('js--hidden').attr('aria-hidden', 'false')
@@ -93,6 +94,7 @@
                 $(select + ' option:first-child').attr('selected', true);
             }
             $container.on('change', select, function() {
+                window.location.hash = $(this).val().split('.')[1];
                 $(content).attr('aria-hidden', 'true').addClass('js--hidden').filter($(this).val()).removeClass('js--hidden').attr('aria-hidden', 'false');
                 if (trigger) $(trigger).removeClass('js--selected').filter('[data-tab="' + $(this).val() + '"]').addClass('js--selected');
             });
