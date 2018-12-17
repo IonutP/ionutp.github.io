@@ -50,9 +50,9 @@
         <h1>Tab content heading3 again</h1>
         <p>this should be the content inside tabs</p>
     </div>
-    <div class="dividends">
-        <p><a href="dividends.html">Dividends page</a></p>
-    </div>
+
+    <p><a href="dividends.html">Dividends page</a></p>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -61,7 +61,7 @@
     var tabs = function($container, trigger, content, select, hash) {
         // display specific tab using hash from url
         var hash = window.location.hash.split('#')[1];
-        if (hash) {
+        if (hash && $(content+'.'+hash).length) {
             $(content).addClass('js--hidden').attr('aria-hidden', 'true').filter('.'+hash).removeClass('js--hidden').attr('aria-hidden', 'false');
         } else {
             $(content).addClass('js--hidden').attr('aria-hidden', 'true').first().removeClass('js--hidden').attr('aria-hidden', 'false');
@@ -69,7 +69,7 @@
 
         // if trigger is used/defined
         if (trigger) {
-            if (hash) {
+            if (hash && $(content+'.'+hash).length) {
                 $(trigger).attr('tabindex', '0').filter('[data-tab=".'+hash+'"]').addClass('js--selected');
             } else {
                 $(trigger).attr('tabindex', '0').first().addClass('js--selected');
@@ -87,7 +87,7 @@
 
         // if select is used/defined
         if (select) {
-            if (hash) {
+            if (hash && $(content+'.'+hash).length) {
                 $(select + ' option[value=".'+hash+'"]').attr('selected', true);
             } else {
                 $(select + ' option:first-child').attr('selected', true);
