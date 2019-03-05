@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Clip Path Generator - CSS Plant</title>
+    <meta name="description" content="Clip Path (Mask) CSS code generator is very useful tool you can use to create CSS masking on your page. You can create any CSS clip path code just with your mouse without any coding." />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://www.cssplant.com/js/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <link rel='stylesheet' href='http://www.cssplant.com/css/style.css?v=4' type='text/css' media='all' />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="http://www.cssplant.com/css/spectrum.css">
+    <link rel="stylesheet" type="text/css" href="http://www.cssplant.com/css/clip-path-generator.css">
+    <meta name="google-site-verification" content="Rrf1ioERtJQU0SsAWpdWv-ezmG-Dt898j98DoggmgXw" />
+</head>
+
+<body>
+    <header id="top-menu-wrap">
+        <div id="top-menu">
+            <a href="/" id="logo"></a>
+            <nav id="main-menu">
+                <a href="/layout-generator" >
+      <span class="plant-roof"></span>
+      Home
+    </a>
+                <a href="/layout-generator" >
+      <span class="plant-roof"></span>
+      Layout generator
+      <span class="beta-label">beta</span>
+    </a>
+                <a href="/clip-path-generator" class="active">
+      <span class="plant-roof"></span>
+      Clip path
+      <span class="beta-label">beta</span>
+    </a>
+                <a href="http://cssanimate.com">
+      <span class="plant-roof"></span>
+      Animation
+    </a>
+                <a href="/border-radius-generator" >
+      <span class="plant-roof"></span>
+      Border radius
+      <span class="beta-label">beta</span>
+    </a>
+                <a href="/contact">
+    <span class="plant-roof"></span>
+      Contact
+    </a>
+            </nav>
+            <div class="clr"></div>
+        </div>
+    </header>
+    <div id="site-content">
+        <div id="main">
+            <div id="side-tools-panel">
+                <h1>Clip Path (Mask) Generator</h1>
+            </div>
+            <div id="top-tools-panel">
+                <a href="javascript:;" id="pen-selection-lnk" class="tt-button tt-icon" title="Lasso selection"></a>
+                <a href="javascript:;" id="lines-selection-lnk" class="tt-button tt-icon" title="Polygonal lasso selection"></a>
+                <a href="javascript:;" id="reset-lnk"  class="tt-button tt-icon" title="Reset"></a>
+                &nbsp;
+                <a href="javascript:;" id="show-markers-btn"  class="tt-button tt-icon active" title="Show/hide markers"></a>
+                <a href="javascript:;" id="apply-mask-btn" class="tt-button tt-icon active" title="Apply mask"></a>
+                &nbsp;
+                <a href="javascript:;" id="use-bg-color-btn" class="tt-button tt-icon active" title="Use image/background color"></a>
+                <input type="text" id="color-p" value="#ECC" />
+                &nbsp;
+                &nbsp;
+                <span class="drop-down-item tt-button" >
+         <span class="ddi-label">Examples &#x25BE;</span>
+                <span class="drop-down-menu"  id="clip-example">
+           <a href="javascript:;" data-value="4side-polygon">Four sides</a>         
+           <a href="javascript:;" data-value="triangle">Triangle</a>
+           <a href="javascript:;" data-value="rhomb">Rhomb</a>  
+         </span>
+                </span>
+                <a href="#inline-help" id="help-btn"  class="tt-button tt-icon" title="Help/Guide"></a>
+                <span id="selected-marker-block">
+
+    <span id="positions-col-block">
+    <strong>Selected marker:</strong>
+    
+    Left <input type="text" name="selected-marker-left" class="position-input" id="selected-marker-left" value="" />
+    &nbsp;
+    Top <input type="text" name="selected-marker-top" class="position-input" id="selected-marker-top" value="" />
+    </span>
+                <a href="javascript:;" id="remove-marker-lnk"  class="tt-button  tt-icon" title="Remove marker"></a>
+                <a href="javascript:;" id="prev-marker-lnk"  class="tt-button  tt-icon" title="Previous marker"></a>
+                <a href="javascript:;" id="next-marker-lnk"  class="tt-button  tt-icon" title="Next marker"></a>
+                </span>
+            </div>
+            <div id="working-area">
+                <div id="preview-img-wrap" ondragover="return false;">
+                    <img id="preview-img" src="http://www.menucool.com/slider/prod/image-slider-4.jpg" />
+                    <span id="clip-circle"></span>
+                </div>
+                <div style="position:relative;">
+                    <div id="coordinates-corner">
+                        X:<span id="x-coord-lb">0</span>
+                        &nbsp;
+                        Y:<span id="y-coord-lb">0</span>
+                    </div>
+                </div>
+                <div id="clip-path-notice">
+                    Notice: <br /> Start selection by clicking lasso or polygonal lasso button and draw path on image area. <br /> You can drag your image into this area.
+                </div>
+            </div>
+            <div id="code-results">
+                <div style="padding-bottom:10px;">
+                    Embeding code type:
+                    <label>
+                        <input type="radio" name="code-type" value="inline" checked="checked">
+                        Inline
+                    </label>
+                    &nbsp;
+                    <label>
+                        <input type="radio" name="code-type" value="file">
+                        File
+                    </label>
+                </div>
+                <div class="clr"></div>
+                <div id="inline-texts">
+                    <div class="code-result">
+                        CSS code: <br />
+                        <textarea id="code-text"></textarea>
+                    </div>
+                    <div class="code-result">
+                        Inline SVG ( put inside HTML code): <br />
+                        <textarea id="svg-text"></textarea>
+                    </div>
+                </div>
+                <div id="files-texts">
+                    <div class="code-result">
+                        CSS code: <br />
+                        <textarea id="file-code-text"></textarea>
+                    </div>
+                    <div class="code-result">
+                        SVG File (<a href="#" download="clip.svg" id="svg-file-download-lnk">download clip.svg</a>): <br />
+                        <textarea id="file-svg-text"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="inline-help" style="display:none;">
+            <div id="fancy-help">
+                <h2>Quick guide</h2>
+                <ul>
+                    <li>You can <strong>use your image</strong> instead of default by <strong>dragging and drop your image</strong> into main working image area.</li>
+                    <li>You can select clipping area in two ways: Lasso or Polygonal lasso</li>
+                    <li>To lock clip selection with Polygonal lasso, you should click second time on last marker or put next marker near the most first marker</li>
+                    <li>You can <strong>disable image and use background color</strong>. To change background color use color picker tool</li>
+                    <li>You can easily <strong>reset</strong> selection</li>
+                    <li>You can <strong>hide/show markers</strong> if they interfere</li>
+                    <li>You can <strong>disable/enable clipping</strong>, in this case there will left only selectiong border</li>
+                    <li>You can <strong>add new marker</strong> into selection by clicking on edge when crosshair cursor is there</li>
+                    <li>You can <strong>select</strong> any marker by just clicking on it</li>
+                    <li>You can <strong>change</strong> selected <strong>marker position</strong> by dragging it across area</li>
+                    <li>You can <strong>edit</strong> lef/top position for selected marker. Also you can <strong>remove</strong> selected markery by clicking on <strong>Trash</strong> button or by using <strong>DELETE key</strong> on keyboard.</li>
+                    <li>To <strong>navigate</strong> between markers you can use <strong>Next/Prev</strong> buttons in marker section</li>
+                    <li>You can <strong>move</strong> you selection in place you want by dragging</li>
+                    <li>You can <strong>scale</strong> your selection</li>
+                    <li>You can <strong>rotate</strong> you selection</li>
+                </ul>
+            </div>
+        </div>
+        <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <clipPath id="clipPolygon">
+                <polygon id="clipPoints" points=""></polygon>
+            </clipPath>
+        </svg>
+        <div class="clr"></div>
+    </div>
+    <footer>
+        <div id="footer-content">
+            <div id="footer-copy">&copy; 2016-2019 All Rights Reserved</div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://www.cssplant.com/js/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="http://www.cssplant.com/js/spectrum.js"></script>
+    <script type="text/javascript" src="http://www.cssplant.com/js/clip-path-generator.js"></script>
+    <script>
+    ! function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0],
+            p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s);
+            js.id = id;
+            js.src = p + '://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
+    </script>
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=557447074316600";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/javascript">
+    (function() {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+    </script>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-45193516-1', 'cssplant.com');
+    ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
