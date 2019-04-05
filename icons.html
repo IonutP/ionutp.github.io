@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Icons</title>
+    <link rel="stylesheet" href="css-icons.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="cssjson.js"></script>
+</head>
+
+<body>
+    <div class="table">
+        <div class="table-cell">
+            <div class="form">
+                <input type="text" class="url" value="https://s3.amazonaws.com/icomoon.io/50912/IonutPFontPack/style.css">
+                <input type="submit" class="button">
+            </div>
+        </div>
+    </div>
+    <div class="module-icon-demo_list grid grid--no-space"></div>
+    <script type="text/javascript">
+    $('.url').on('keypress', function(e) {
+        if (e.which == 13) {
+            e.preventDefault();
+            $('.button').trigger('click');
+        }
+    });
+    $('.button').on('click', function(e) {
+        e.preventDefault();
+        var url = $('.url').val().trim().split('?')[0];
+
+        var jqxhr = $.get(url, function(data) {
+                $('<style />').text(data).appendTo($('head'));
+                var json = CSSJSON.toJSON(data),
+                    html = '';
+                $.each(json.children, function(i, icon) {
+                    if (i.indexOf('.') == 0) {
+                        var name = i.split(':')[0].split('.')[1].split('q4-icon_')[1],
+                            iconClass = i.split(':')[0].split('.')[1];
+
+                        html += '<div class="module-icon-demo_item grid_col grid_col--1-of-4 grid_col--lg-1-of-3  grid_col--lc-1-of-2 grid_col--md-1-of-1">' +
+                            '<div class="module-icon-demo_wrap">' +
+                            '<i class="' + iconClass + '"></i>' +
+                            '<span class="module-icon-demo_name">' + name + '</span>' +
+                            '<div class="module-icon-demo_note">' +
+                            '<span>unicode</span>' +
+                            '<span class="module-icon-demo_unicode">' + icon.attributes.content + '</span>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                });
+                $('.module-icon-demo_list').html(html).fadeIn();
+                $('.form').hide();
+            })
+            .fail(function() {
+                alert('Invalid set URL');
+            })
+    });
+    </script>
+</body>
+
+</html>
