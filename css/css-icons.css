@@ -434,7 +434,7 @@ body {
   background: #f6f6f6;
 }
 .module-icon-demo_wrap i {
-    font-size: 40px;
+    font-size: 20px;
 }
 .module-icon-demo_note {
   margin-top: 10px;
@@ -442,7 +442,8 @@ body {
   border-top: 1px solid rgba(34, 34, 34, 0.1);
 }
 .module-icon-demo_name, .module-icon-demo_unicode {
-  float: right;
+  /*float: right;*/
+  margin-left: 10px;
   font-size: 14px;
 }
 

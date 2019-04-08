@@ -40,7 +40,7 @@
                         var name = i.split(':')[0].split('.')[1].split('q4-icon_')[1],
                             iconClass = i.split(':')[0].split('.')[1];
 
-                        html += '<div class="module-icon-demo_item grid_col grid_col--1-of-4 grid_col--lg-1-of-3  grid_col--lc-1-of-2 grid_col--md-1-of-1">' +
+                        html += '<div class="module-icon-demo_item grid_col grid_col--1-of-6 grid_col--lg-1-of-3  grid_col--lc-1-of-2 grid_col--md-1-of-1">' +
                             '<div class="module-icon-demo_wrap">' +
                             '<i class="' + iconClass + '"></i>' +
                             '<span class="module-icon-demo_name">' + name + '</span>' +
@@ -53,7 +53,7 @@
                     }
                 });
                 $('.module-icon-demo_list').html(html).fadeIn();
-                $('.form').hide();
+                $('.table').hide();
             })
             .fail(function() {
                 alert('Invalid set URL');
