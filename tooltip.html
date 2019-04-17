@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Welcome to my Github page</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            background-color: #eee;
+        }
+        button {
+            margin: 8px;
+            padding: 16px 24px;
+            background-color: #2196F3;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+        [tooltip] {
+            position: relative;
+        }
+
+        [tooltip]::before {
+            content: attr(tooltip-content);
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: calc(100% + 16px);
+            width: 200%;
+            padding: 8px 16px;
+            text-align: center;
+            text-transform: none;
+            font-size: 14px;
+            border-radius: 3px;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transform: translate(20px, -50%);
+            transition: all .2s ease-in-out .5s;
+            z-index: 1;
+        }
+
+        [tooltip]:hover::before {
+            opacity: 1;
+            transform: translate(0, -50%);
+        }
+
+        [tooltip-bottom]::before {
+            top: calc(100% + 16px);
+            left: 50%;
+            right: initial;
+            transform: translate(-50%, -20px);
+        }
+
+        [tooltip-bottom]:hover::before {
+            transform: translate(-50%, 0)
+        }
+
+        [tooltip-right]::before {
+            top: 50%;
+            left: calc(100% + 16px);
+            right: initial;
+            transform: translate(-20px, -50%);
+        }
+
+        [tooltip-right]:hover::before {
+            transform: translate(0, -50%);
+        }
+
+        [tooltip-top]::before {
+            top: initial;
+            left: 50%;
+            right: initial;
+            bottom: calc(100% + 16px);
+            transform: translate(-50%, 20px);
+        }
+
+        [tooltip-top]:hover::before {
+            transform: translate(-50%, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <button tooltip tooltip-left tooltip-content="This button will take you to google.com">Google it!</button>
+    <button tooltip tooltip-bottom tooltip-content="This tooltip is at the bottom">Bottom</button>
+    <button tooltip tooltip-right tooltip-content="This tooltip is at the right">Right</button>
+    <button tooltip tooltip-top tooltip-content="This tooltip is at the top">Top !</button>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript">
+    // insert code here
+    </script>
+</body>
+
+</html>

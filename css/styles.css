@@ -11,6 +11,11 @@ html {
     font-size: 10px;
 }
 
+body {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
