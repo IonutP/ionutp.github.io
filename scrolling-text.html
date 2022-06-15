@@ -1,0 +1,50 @@
+<div class="scrolling-logos-scroll">
+	<div class="scrolling-logos_container">
+		<div class="scrolling-logos_content">
+			<span class="scrolling-logos_text fill">MLB</span>
+			<span class="scrolling-logos_text">NBA</span>
+			<span class="scrolling-logos_text fill">NHL</span>
+			<span class="scrolling-logos_text">MLS</span>
+			<span class="scrolling-logos_text fill">NCAA</span>
+			<span class="scrolling-logos_text">NCAAF</span>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(window).on("load", function () {
+		var $content = $(".scrolling-logos_content");
+		var $clone = $content.clone().insertAfter($content).addClass("js--cloned");
+		$(".scrolling-logos_container").css("height", $content.outerHeight(true));
+		$content.css({
+			position: "absolute",
+			left: $content.outerWidth() * -1,
+			transform: "translate3d(0,0,0)",
+		});
+		$clone.css({
+			position: "absolute",
+			left: "0px",
+			transform: "translate3d(0,0,0)",
+		});
+	});
+
+	$(window).on("scroll", function () {
+		var scrollTop = $(document).scrollTop(),
+			windowHeight = $(window).height(),
+			pageScroll = scrollTop + windowHeight,
+			targetPosition = $(".scrolling-logos").offset().top,
+			$targetElement = $(".scrolling-logos .scrolling-logos_content");
+
+		if (targetPosition <= pageScroll) {
+			var i = scrollTop - targetPosition + windowHeight,
+				scroll = i - 150,
+				scrollSlow = scroll + scroll / 70 / 100,
+				imageScroll = scrollSlow;
+
+			$targetElement.css({
+				// backgroundPosition: imageScroll + "px center",
+				transform: "translate3d(" + imageScroll + "px, 0, 0)",
+			});
+		}
+	});
+</script>
