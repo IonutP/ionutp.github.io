@@ -47,7 +47,7 @@ function startTimer(id, deadline) {
 }
 
 window.onload = function () {
-	// var deadline = new Date("January 1, 2023 00:00:00");
-	var deadline = new Date(new Date().getTime() + 0.1 * 60000);
+	var deadline = new Date("January 1, 2023 00:00:00");
+	// var deadline = new Date(new Date().getTime() + 0.1 * 60000);
 	startTimer("clock", deadline);
 };
