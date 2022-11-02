@@ -38,8 +38,8 @@ function startTimer(id, deadline) {
         if (timer.total < 1) {
             clearInterval(timerInterval);
             clock.innerHTML = '<span>0</span><span>0</span><span>0</span><span>0</span>';
-            // window.location.pathname = '/flakes';
-            window.location = window.location.origin + '/flakes/';
+            window.location.pathname = '/flakes';
+            // window.location = window.location.origin + '/flakes/';
             // console.log(window.location);
         }
 	}, 1000);
