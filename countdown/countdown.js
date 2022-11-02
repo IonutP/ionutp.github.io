@@ -39,7 +39,7 @@ function startTimer(id, deadline) {
             clearInterval(timerInterval);
             clock.innerHTML = '<span>0</span><span>0</span><span>0</span><span>0</span>';
             // window.location.pathname = '/flakes';
-            window.location.assign(window.location.origin + '/flakes/');
+            window.location = window.location.origin + '/flakes/';
             // console.log(window.location);
         }
 	}, 1000);
