@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Downloader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 YouTube Video Downloader</h1>
+            <p class="subtitle">Download YouTube videos quickly and easily</p>
+        </header>
+
+        <main>
+            <div class="download-card">
+                <form id="downloadForm">
+                    <div class="input-group">
+                        <label for="videoUrl">YouTube URL</label>
+                        <input 
+                            type="url" 
+                            id="videoUrl" 
+                            placeholder="https://www.youtube.com/watch?v=..." 
+                            required
+                        >
+                    </div>
+
+                    <div class="options-group">
+                        <div class="option">
+                            <label for="format">Format</label>
+                            <select id="format">
+                                <option value="video">Video (MP4)</option>
+                                <option value="audio">Audio Only (MP3)</option>
+                            </select>
+                        </div>
+
+                        <div class="option">
+                            <label for="quality">Quality</label>
+                            <select id="quality">
+                                <option value="best">Best</option>
+                                <option value="720p">720p</option>
+                                <option value="480p">480p</option>
+                                <option value="360p">360p</option>
+                                <option value="worst">Lowest</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="downloadBtn" class="download-btn">
+                        <span class="btn-text">Download</span>
+                        <span class="btn-loader" style="display: none;">⏳ Processing...</span>
+                    </button>
+                </form>
+
+                <div id="status" class="status-message"></div>
+                <div id="videoInfo" class="video-info" style="display: none;"></div>
+            </div>
+
+            <div class="info-section">
+                <h2>📋 How it works</h2>
+                <p>Due to browser security restrictions, direct YouTube downloads from a web page are limited. This interface provides options:</p>
+                <ul>
+                    <li><strong>Option 1:</strong> Use the Python script locally (see instructions below)</li>
+                    <li><strong>Option 2:</strong> Use a browser extension or desktop app</li>
+                    <li><strong>Option 3:</strong> Use a backend service (requires server hosting)</li>
+                </ul>
+            </div>
+
+            <div class="python-script-section">
+                <h2>🐍 Python Script (Recommended)</h2>
+                <p>For the best experience, use the Python script locally:</p>
+                <div class="code-block">
+                    <code>
+                        # Install dependencies<br>
+                        pip install yt-dlp<br><br>
+                        # Download a video<br>
+                        python download_youtube.py &lt;YOUTUBE_URL&gt;
+                    </code>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>⚠️ Please respect YouTube's Terms of Service and copyright laws when downloading content.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
